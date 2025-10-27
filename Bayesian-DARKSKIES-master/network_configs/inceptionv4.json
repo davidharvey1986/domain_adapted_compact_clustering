@@ -1,0 +1,158 @@
+{
+  "net": {
+    "2d": 1,
+    "description": "Almost standard InceptionV4"
+  },
+  "layers": [
+    {
+      "type": "composite",
+      "config_path": "../network_configs/composite_layers/inception_stem.json"
+    },
+    {
+      "type": "composite",
+      "config_path": "../network_configs/composite_layers/inception_a.json",
+      "defaults": {
+        "convolutional": {
+          "dropout": 0.01
+        }
+      }
+    },
+    {
+      "type": "composite",
+      "config_path": "../network_configs/composite_layers/inception_a.json",
+      "defaults": {
+        "convolutional": {
+          "dropout": 0.01
+        }
+      }
+    },
+    {
+      "type": "composite",
+      "config_path": "../network_configs/composite_layers/inception_a.json",
+      "defaults": {
+        "convolutional": {
+          "dropout": 0.01
+        }
+      }
+    },
+    {
+      "type": "composite",
+      "config_path": "../network_configs/composite_layers/inception_a.json",
+      "defaults": {
+        "convolutional": {
+          "dropout": 0.01
+        }
+      }
+    },
+    {
+      "type": "composite",
+      "config_path": "../network_configs/composite_layers/inception_reduction_a.json"
+    },
+    {
+      "type": "composite",
+      "config_path": "../network_configs/composite_layers/inception_b.json",
+      "defaults": {
+        "convolutional": {
+          "dropout": 0.01
+        }
+      }
+    },
+    {
+      "type": "composite",
+      "config_path": "../network_configs/composite_layers/inception_b.json",
+      "defaults": {
+        "convolutional": {
+          "dropout": 0.01
+        }
+      }
+    },
+    {
+      "type": "composite",
+      "config_path": "../network_configs/composite_layers/inception_b.json",
+      "defaults": {
+        "convolutional": {
+          "dropout": 0.01
+        }
+      }
+    },
+    {
+      "type": "composite",
+      "config_path": "../network_configs/composite_layers/inception_b.json",
+      "defaults": {
+        "convolutional": {
+          "dropout": 0.01
+        }
+      }
+    },
+    {
+      "type": "composite",
+      "config_path": "../network_configs/composite_layers/inception_b.json",
+      "defaults": {
+        "convolutional": {
+          "dropout": 0.01
+        }
+      }
+    },
+    {
+      "type": "composite",
+      "config_path": "../network_configs/composite_layers/inception_b.json",
+      "defaults": {
+        "convolutional": {
+          "dropout": 0.01
+        }
+      }
+    },
+    {
+      "type": "composite",
+      "config_path": "../network_configs/composite_layers/inception_b.json",
+      "defaults": {
+        "convolutional": {
+          "dropout": 0.01
+        }
+      }
+    },
+    {
+      "type": "composite",
+      "config_path": "../network_configs/composite_layers/inception_reduction_b.json"
+    },
+    {
+      "type": "composite",
+      "config_path": "../network_configs/composite_layers/inception_c.json",
+      "defaults": {
+        "convolutional": {
+          "dropout": 0.01
+        }
+      }
+    },
+    {
+      "type": "composite",
+      "config_path": "../network_configs/composite_layers/inception_c.json",
+      "defaults": {
+        "convolutional": {
+          "dropout": 0.01
+        }
+      }
+    },
+    {
+      "type": "composite",
+      "config_path": "../network_configs/composite_layers/inception_c.json",
+      "defaults": {
+        "convolutional": {
+          "dropout": 0.01
+        }
+      }
+    },
+    {
+      "type": "adaptive_pool",
+      "output": [1, 1]
+    },
+    {
+      "type": "reshape",
+      "output": [-1]
+    },
+    {
+      "type": "linear",
+      "factor": 1
+    }
+  ]
+}

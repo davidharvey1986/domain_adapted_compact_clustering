@@ -1,0 +1,19 @@
+numpy~=2.2.5
+scipy~=1.15.2
+PyYAML~=6.0.2
+optuna~=4.1.0
+joblib~=1.4.2
+pandas~=2.3.0
+PyQt6~=6.8.1
+plotly~=5.24.1
+astropy~=7.0.1
+matplotlib~=3.10.0
+scikit-learn~=1.6.1
+SciencePlots~=2.1.1
+
+--find-links https://download.pytorch.org/whl/cu121; sys_platform == "Windows"
+torch~=2.7.0
+torchvision~=0.22.0
+
+sciplots @ git+https://github.com/EthanTreg/Science-Plots@v1.0.9
+netloader @ git+https://github.com/EthanTreg/PyTorch-Network-Loader@4217441

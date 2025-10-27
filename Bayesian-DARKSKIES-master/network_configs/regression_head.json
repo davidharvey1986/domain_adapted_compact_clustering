@@ -1,0 +1,12 @@
+{
+  "net": {
+    "dropout_prob": 0.2,
+    "2d": 1
+  },
+  "layers": [
+    {
+      "type": "linear",
+      "factor": 1
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "net": {
+    "checkpoints": true,
+    "Conv": {
+      "padding": "same"
+    }
+  },
+  "layers": [
+    {
+      "type": "Checkpoint"
+    },
+    {
+      "type": "Conv",
+      "factor": 0.25,
+      "kernel": 1
+    },
+    {
+      "type": "Checkpoint"
+    },
+    {
+      "type": "Skip",
+      "layer": 0
+    },
+    {
+      "type": "Conv",
+      "factor": 0.375,
+      "kernel": 1
+    },
+    {
+      "type": "Conv",
+      "factor": 0.5
+    },
+    {
+      "type": "Concatenate",
+      "layer": -1
+    },
+    {
+      "type": "Checkpoint"
+    },
+    {
+      "type": "Skip",
+      "layer": 0
+    },
+    {
+      "type": "Conv",
+      "factor": 0.0625,
+      "kernel": 1
+    },
+    {
+      "type": "Conv",
+      "factor": 0.125,
+      "kernel": 5
+    },
+    {
+      "type": "Concatenate",
+      "layer": -1
+    },
+    {
+      "type": "Checkpoint"
+    },
+    {
+      "type": "Skip",
+      "layer": 0
+    },
+    {
+      "type": "Pool",
+      "kernel": 3,
+      "stride": 1,
+      "padding": "same"
+    },
+    {
+      "type": "Conv",
+      "factor": 0.125,
+      "kernel": 1
+    },
+    {
+      "type": "Concatenate",
+      "layer": -1
+    }
+  ]
+}

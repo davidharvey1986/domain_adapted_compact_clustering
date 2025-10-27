@@ -1,0 +1,97 @@
+{
+  "net": {
+    "2d": 1,
+    "checkpoints": 1,
+    "convolutional": {
+      "dropout": 0.08,
+      "dropout_no_val": 0
+    },
+    "linear": {
+      "dropout_no_val": 0
+    },
+    "description": "Same as v12 but no pooling"
+  },
+  "layers": [
+    {
+      "type": "composite",
+      "channels": 64,
+      "config_path": "../network_configs/inception.json"
+    },
+    {
+      "type": "conv_downscale",
+      "filters": 128
+    },
+    {
+      "type": "composite",
+      "channels": 128,
+      "config_path": "../network_configs/inception.json"
+    },
+    {
+      "type": "conv_downscale",
+      "filters": 256
+    },
+    {
+      "type": "composite",
+      "channels": 256,
+      "config_path": "../network_configs/inception.json"
+    },
+    {
+      "type": "composite",
+      "channels": 256,
+      "config_path": "../network_configs/inception.json"
+    },
+    {
+      "type": "conv_downscale",
+      "filters": 256
+    },
+    {
+      "type": "composite",
+      "channels": 256,
+      "config_path": "../network_configs/inception.json"
+    },
+    {
+      "type": "composite",
+      "channels": 256,
+      "config_path": "../network_configs/inception.json"
+    },
+    {
+      "type": "conv_downscale",
+      "filters": 256
+    },
+    {
+      "type": "composite",
+      "channels": 256,
+      "config_path": "../network_configs/inception.json"
+    },
+    {
+      "type": "composite",
+      "channels": 256,
+      "config_path": "../network_configs/inception.json"
+    },
+    {
+      "type": "convolutional",
+      "filters": 7,
+      "dropout": 0
+    },
+    {
+      "type": "adaptive_pool",
+      "output": [1, 1]
+    },
+    {
+      "type": "reshape",
+      "output": [-1]
+    },
+    {
+      "type": "checkpoint"
+    },
+    {
+      "type": "linear",
+      "features": 64
+    },
+    {
+      "type": "linear",
+      "factor": 1,
+      "dropout": 0
+    }
+  ]
+}

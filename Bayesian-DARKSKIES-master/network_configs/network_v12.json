@@ -1,0 +1,99 @@
+{
+  "net": {
+    "2d": 1,
+    "checkpoints": 1,
+    "convolutional": {
+      "dropout": 0.08,
+      "dropout_no_val": 0
+    },
+    "linear": {
+      "dropout_no_val": 0
+    },
+    "description": "Same as v8 but with stellar maps"
+  },
+  "layers": [
+    {
+      "type": "composite",
+      "channels": 64,
+      "config_path": "../network_configs/inception.json"
+    },
+    {
+      "type": "pool"
+    },
+    {
+      "type": "composite",
+      "channels": 128,
+      "config_path": "../network_configs/inception.json"
+    },
+    {
+      "type": "pool"
+    },
+    {
+      "type": "composite",
+      "channels": 256,
+      "config_path": "../network_configs/inception.json"
+    },
+    {
+      "type": "composite",
+      "channels": 256,
+      "config_path": "../network_configs/inception.json"
+    },
+    {
+      "type": "pool"
+    },
+    {
+      "type": "composite",
+      "channels": 256,
+      "config_path": "../network_configs/inception.json"
+    },
+    {
+      "type": "composite",
+      "channels": 256,
+      "config_path": "../network_configs/inception.json"
+    },
+    {
+      "type": "pool"
+    },
+    {
+      "type": "composite",
+      "channels": 256,
+      "config_path": "../network_configs/inception.json"
+    },
+    {
+      "type": "composite",
+      "channels": 256,
+      "config_path": "../network_configs/inception.json"
+    },
+    {
+      "type": "reshape",
+      "output": [-1]
+    },
+    {
+      "type": "checkpoint"
+    },
+    {
+      "type": "linear",
+      "features": 256
+    },
+    {
+      "type": "checkpoint"
+    },
+    {
+      "type": "linear",
+      "features": 7,
+      "dropout": 0
+    },
+    {
+      "type": "checkpoint"
+    },
+    {
+      "type": "linear",
+      "features": 64
+    },
+    {
+      "type": "linear",
+      "factor": 1,
+      "dropout": 0
+    }
+  ]
+}

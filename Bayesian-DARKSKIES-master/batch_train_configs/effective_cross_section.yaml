@@ -1,0 +1,369 @@
+training:
+  # If the simulations should be cumulatively added between tests or only use simulations given
+  # for that test
+  cumulative: True
+  # If the unknown simulations should be cumulatively added between tests or only use simulations
+  # given for that test
+  unknown-cumulative: True
+  # Number of epochs to train the network for
+  epochs: 145
+  # Number of repeats per test
+  repeats: 10
+  # File number to save the network progres, should be a multiple of 100
+  batch-save: 24
+  # File number to load the network state, should be a multiple of 100
+  batch-load: 24
+  # Learning rate for training the network
+  learning-rate: 1.0e-4
+  # File name for the network model to load
+  network-name: 'network_v10'
+  # Network description to append on description
+  description: 'Final Training Choices'
+  # Names for each test
+  test-names:
+#    - 'BAHAMAS'
+#    - 'BAHAMAS AGN'
+#    - 'FLAMINGO'
+#    - 'FLAMINGO High'
+#    - 'FLAMINGO Low'
+
+#    - 'All BAHAMAS & FLAMINGO, Median'
+#    - 'All BAHAMAS & FLAMINGO, Free CDM Median'
+#    - 'All BAHAMAS & FLAMINGO, Median & Linear'
+#    - 'All BAHAMAS & FLAMINGO, Median & Equal Loss Weight'
+#    - 'All BAHAMAS & FLAMINGO, Singular & Equal Loss Weight'
+#    - 'All BAHAMAS & FLAMINGO, Median no classification'
+
+#    - 'BAHAMAS'
+#    - 'BAHAMAS AGN'
+#    - 'FLAMINGO'
+#    - 'FLAMINGO AGN'
+
+#    - 'SIDM Only'
+#    - 'SIDM Only, Linear'
+#    - 'SIDM Only, With X-Ray'
+#    - 'SIDM, CDM unknown'
+#    - 'SIDM + CDM'
+#    - 'SIDM + CDM + AGN, 1 CDM label'
+#    - 'SIDM + CDM + AGN, 1 CDM label, With X-Ray'
+#    - 'SIDM + CDM + AGN + FLAMINGO, 1 CDM label'
+#    - 'SIDM + CDM + AGN + FLAMINGO, unknown CDM'
+
+    # Batch Train 23
+#    - 'All CDM Unknown, 1 CDM Label'
+#    - 'All CDM Unknown, No X-Ray'
+#    - 'All CDM Unknown, 1 CDM Label, No X-Ray'
+#    - 'All Known, Flamingo σ=5e-4, No X-Ray'
+#    - 'All Known, Flamingo σ=1e-3, No X-Ray'
+#    - 'All Known, Flamingo σ=2.28e-3, No X-Ray'
+#    - 'All Known, Flamingo σ=5e-3, No X-Ray'
+#    - 'All Known, Flamingo σ=1e-2, No X-Ray'
+#    - 'All Known, Flamingo σ=5e-4, No X-Ray'
+#    - 'All Known, 1 CDM Label σ=1e-2, No X-Ray'
+#    - 'All Known, 1 CDM Label σ=1e-3, No X-Ray'
+#    - 'All Known, 2 CDM Label σ=1e-3, No X-Ray'
+
+  # Batch Train 24
+    - 'K, Log, NX, UL'
+    - 'K, Lin, NX, UL'
+    - 'K, Log, NX, 1L'
+    - 'K, Lin, NX, 1L'
+    - 'U, Log, NX, 1L'
+    - 'K, Log, X, 1L'  # 5
+    - 'K, Log, NX, 2L'
+    - 'K, Log, NX, 1L, Noise'
+    - 'K, Log, NX, 1L, Test'
+    - 'K, Log, X, UL'
+    - 'K, Log, NX, 1L, Noise, No FLAMINGO, No AGN'  # 10
+    - 'K, Log, NX, 1L, Noise, No FLAMINGO, No AGN, Unknown no label'
+    - 'K, Log, NX, UL, Test, Unknown no label'
+    - 'K, Log, NX, 1L, Test, Unknown no label'
+    - 'K, Log, NX, 1L, BAHAMAS-0.1 unknown, Transfer Learning'
+  # Known simulations for each test
+  known-simulations:
+#    -
+#      - 'bahamas_cdm'
+#      - 'bahamas_0.1'
+#      - 'bahamas_0.3'
+#      - 'bahamas_1'
+#    -
+#      - 'bahamas_cdm_low'
+#      - 'bahamas_cdm_hi'
+#    -
+#      - 'flamingo'
+#    -
+#      - 'flamingo_hi'
+#    -
+#      - 'flamingo_low'
+
+#    -
+#      - 'bahamas_cdm'
+#      - 'bahamas_0.1'
+#      - 'bahamas_0.3'
+#      - 'bahamas_1'
+#      - 'bahamas_cdm_low'
+#      - 'bahamas_cdm_hi'
+#      - 'flamingo'
+#      - 'flamingo_low'
+#      - 'flamingo_hi'
+#    -
+#      - 'bahamas_0.1'
+#      - 'bahamas_0.3'
+#      - 'bahamas_1'
+#    -
+#      - 'bahamas_cdm'
+#      - 'bahamas_0.1'
+#      - 'bahamas_0.3'
+#      - 'bahamas_1'
+#      - 'bahamas_cdm_low'
+#      - 'bahamas_cdm_hi'
+#      - 'flamingo'
+#      - 'flamingo_low'
+#      - 'flamingo_hi'
+#    -
+#      - 'bahamas_cdm'
+#      - 'bahamas_0.1'
+#      - 'bahamas_0.3'
+#      - 'bahamas_1'
+#      - 'bahamas_cdm_low'
+#      - 'bahamas_cdm_hi'
+#      - 'flamingo'
+#      - 'flamingo_low'
+#      - 'flamingo_hi'
+#    -
+#      - 'bahamas_cdm'
+#      - 'bahamas_0.1'
+#      - 'bahamas_0.3'
+#      - 'bahamas_1'
+#      - 'bahamas_cdm_low'
+#      - 'bahamas_cdm_hi'
+#      - 'flamingo'
+#      - 'flamingo_low'
+#      - 'flamingo_hi'
+#    -
+#      - 'bahamas_cdm'
+#      - 'bahamas_0.1'
+#      - 'bahamas_0.3'
+#      - 'bahamas_1'
+#      - 'bahamas_cdm_low'
+#      - 'bahamas_cdm_hi'
+#      - 'flamingo'
+#      - 'flamingo_low'
+#      - 'flamingo_hi'
+
+#    -
+#      - 'bahamas_cdm'
+#      - 'bahamas_0.1'
+#      - 'bahamas_0.3'
+#      - 'bahamas_1'
+#    -
+#      - 'bahamas_cdm_low'
+#      - 'bahamas_cdm_hi'
+#    -
+#      - 'flamingo'
+#    -
+#      - 'flamingo_low'
+#      - 'flamingo_hi'
+
+#    -
+#      - 'bahamas_0.1'
+#      - 'bahamas_0.3'
+#      - 'bahamas_1'
+#    - []
+#    - []
+#    - []
+#    -
+#      - 'bahamas_cdm'
+#    -
+#      - 'bahamas_cdm_low'
+#      - 'bahamas_cdm_hi'
+#    - []
+#    -
+#      - 'flamingo'
+#    -
+#      - '!flamingo'
+#      - '!bahamas_cdm'
+#      - '!bahamas_cdm_low'
+#      - '!bahamas_cdm_hi'
+
+#  -
+#    - 'bahamas_0.1'
+#    - 'bahamas_0.3'
+#    - 'bahamas_1'
+#  - []
+#  - []
+#  -
+#    - 'bahamas_cdm'
+#    - 'bahamas_cdm_low'
+#    - 'bahamas_cdm_hi'
+#    - 'flamingo'
+#    - 'flamingo_low'
+#    - 'flamingo_hi'
+#  - []
+#  - []
+#  - []
+#  - []
+#  - []
+#  - []
+#  - []
+#  - []
+
+    -
+      - 'bahamas_cdm'
+      - 'bahamas_cdm_low'
+      - 'bahamas_cdm_hi'
+      - 'bahamas_0.1'
+      - 'bahamas_0.3'
+      - 'bahamas_1'
+      - 'flamingo'
+      - 'flamingo_low'
+      - 'flamingo_hi'
+    - []
+    - []
+    - []
+    -
+      - '!bahamas_cdm'
+      - '!bahamas_cdm_low'
+      - '!bahamas_cdm_hi'
+      - '!flamingo'
+      - '!flamingo_low'
+      - '!flamingo_hi'
+    -
+      - 'bahamas_cdm'
+      - 'bahamas_cdm_low'
+      - 'bahamas_cdm_hi'
+      - 'flamingo'
+      - 'flamingo_low'
+      - 'flamingo_hi'
+    - []
+    - []
+    - []
+    - []
+    -
+      - '!bahamas_cdm_low'
+      - '!bahamas_cdm_hi'
+      - '!flamingo'
+      - '!flamingo_low'
+      - '!flamingo_hi'
+    - []
+    -
+      - 'bahamas_cdm_low'
+      - 'bahamas_cdm_hi'
+      - 'flamingo'
+      - 'flamingo_low'
+      - 'flamingo_hi'
+    - []
+    -
+      - '!bahamas_cdm_low'
+      - '!bahamas_cdm_hi'
+      - '!bahamas_0.1'
+      - '!flamingo'
+      - '!flamingo_low'
+      - '!flamingo_hi'
+  # Unknown simulations, if simulation is also in known-simulations, it will be treated as known
+  unknown-simulations:
+#    -
+#      - 'flamingo_low_test'
+#    - []
+#    - []
+#    - []
+#    - []
+
+#    -
+#      - 'flamingo_low_test'
+#    -
+#      - 'bahamas_cdm'
+#      - 'bahamas_cdm_low'
+#      - 'bahamas_cdm_hi'
+#      - 'flamingo'
+#      - 'flamingo_low'
+#      - 'flamingo_hi'
+#      - 'flamingo_low_test'
+#    -
+#      - 'flamingo_low_test'
+#    -
+#      - 'flamingo_low_test'
+#    -
+#      - 'flamingo_low_test'
+#    -
+#      - 'flamingo_low_test'
+
+#    -
+#      - 'flamingo_low_test'
+
+#    - []
+#    - []
+#    - []
+#    -
+#      - 'bahamas_cdm'
+#    -
+#      - '!bahamas_cdm'
+#    - []
+#    - []
+#    - []
+#    -
+#      - 'flamingo'
+#      - 'bahamas_cdm'
+#      - 'bahamas_cdm_low'
+#      - 'bahamas_cdm_hi'
+
+#  -
+#    - 'bahamas_cdm'
+#    - 'bahamas_cdm_low'
+#    - 'bahamas_cdm_hi'
+#    - 'flamingo'
+#    - 'flamingo_low'
+#    - 'flamingo_hi'
+#  - []
+#  - []
+#  -
+#    - '!bahamas_cdm'
+#    - '!bahamas_cdm_low'
+#    - '!bahamas_cdm_hi'
+#    - '!flamingo'
+#    - '!flamingo_low'
+#    - '!flamingo_hi'
+#  - []
+#  - []
+#  - []
+#  - []
+#  - []
+#  - []
+#  - []
+#  - []
+    - []
+    - []
+    - []
+    - []
+    -
+      - 'bahamas_cdm'
+      - 'bahamas_cdm_low'
+      - 'bahamas_cdm_hi'
+      - 'flamingo'
+      - 'flamingo_low'
+      - 'flamingo_hi'
+    -
+      - '!bahamas_cdm'
+      - '!bahamas_cdm_low'
+      - '!bahamas_cdm_hi'
+      - '!flamingo'
+      - '!flamingo_low'
+      - '!flamingo_hi'
+    - []
+    -
+      - 'noise'
+    -
+      - '!noise'
+      - 'flamingo_low_test'
+    -
+      - '!flamingo_low_test'
+    -
+      - 'noise'
+    - []
+    -
+      - '!noise'
+      - 'flamingo_low_test'
+    - []
+    -
+      - '!flamingo_low_test'
+      - 'bahamas_0.1'

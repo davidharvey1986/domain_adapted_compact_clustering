@@ -1,0 +1,42 @@
+{
+  "net": {
+    "dropout_prob": 0.1,
+    "2d": 1
+  },
+  "layers": [
+    {
+      "type": "convolutional",
+      "filters": 16
+    },
+    {
+      "type": "pool"
+    },
+    {
+      "type": "convolutional",
+      "filters": 32
+    },
+    {
+      "type": "pool"
+    },
+    {
+      "type": "convolutional",
+      "filters": 64
+    },
+    {
+      "type": "pool"
+    },
+    {
+      "type": "reshape",
+      "output": [-1]
+    },
+    {
+      "type": "linear",
+      "features": 128,
+      "dropout": 1
+    },
+    {
+      "type": "linear",
+      "factor": 3
+    }
+  ]
+}

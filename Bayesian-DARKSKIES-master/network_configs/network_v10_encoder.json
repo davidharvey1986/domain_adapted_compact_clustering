@@ -1,0 +1,65 @@
+{
+  "net": {
+    "checkpoints": 1,
+    "description": "Clustering Further Reduced",
+    "Conv": {
+      "dropout": 0.1
+    },
+    "Linear": {
+      "dropout": 0.1
+    }
+  },
+  "layers": [
+    {
+      "type": "Conv",
+      "filters": 8
+    },
+    {
+      "type": "Pool"
+    },
+    {
+      "type": "Conv",
+      "filters": 16
+    },
+    {
+      "type": "Pool"
+    },
+    {
+      "type": "Conv",
+      "filters": 32
+    },
+    {
+      "type": "Pool"
+    },
+    {
+      "type": "Conv",
+      "filters": 64
+    },
+    {
+      "type": "Pool"
+    },
+    {
+      "type": "Conv",
+      "filters": 128
+    },
+    {
+      "type": "Reshape",
+      "shape": [-1]
+    },
+    {
+      "type": "Checkpoint"
+    },
+    {
+      "type": "Linear",
+      "features": 256
+    },
+    {
+      "type": "Checkpoint"
+    },
+    {
+      "type": "Linear",
+      "factor": 1,
+      "dropout": 0
+    }
+  ]
+}

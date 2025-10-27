@@ -1,0 +1,83 @@
+{
+  "net": {
+    "checkpoints": 1,
+    "Composite": {
+      "name": "inception",
+      "config_dir": "../network_configs/composite_layers/",
+      "defaults": {
+        "Conv": {
+          "dropout": 0.05
+        }
+      }
+    },
+    "description": "Save as v8 but as an encoder"
+  },
+  "layers": [
+    {
+      "type": "Checkpoint"
+    },
+    {
+      "type": "Composite",
+      "channels": 64
+    },
+    {
+      "type": "Pool"
+    },
+    {
+      "type": "Composite",
+      "channels": 128
+    },
+    {
+      "type": "Pool"
+    },
+    {
+      "type": "Composite",
+      "channels": 256
+    },
+    {
+      "type": "Composite",
+      "channels": 256
+    },
+    {
+      "type": "Pool"
+    },
+    {
+      "type": "Composite",
+      "channels": 256
+    },
+    {
+      "type": "Composite",
+      "channels": 256
+    },
+    {
+      "type": "Pool"
+    },
+    {
+      "type": "Composite",
+      "channels": 256
+    },
+    {
+      "type": "Composite",
+      "channels": 256
+    },
+    {
+      "type": "Reshape",
+      "shape": [-1]
+    },
+    {
+      "type": "Checkpoint"
+    },
+    {
+      "type": "Linear",
+      "features": 256
+    },
+    {
+      "type": "Checkpoint"
+    },
+    {
+      "type": "Linear",
+      "factor": 1,
+      "dropout": 0
+    }
+  ]
+}

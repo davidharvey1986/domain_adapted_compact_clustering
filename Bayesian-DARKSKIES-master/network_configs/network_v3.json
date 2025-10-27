@@ -1,0 +1,86 @@
+{
+  "net": {
+    "dropout_prob": 0.1,
+    "2d": 1
+  },
+  "layers": [
+    {
+      "type": "convolutional",
+      "filters": 64,
+      "kernel": 1
+    },
+    {
+      "type": "skip",
+      "layer": 0
+    },
+    {
+      "type": "convolutional",
+      "filters": 96,
+      "kernel": 1
+    },
+    {
+      "type": "convolutional",
+      "filters": 128
+    },
+    {
+      "type": "concatenate",
+      "layer": -4
+    },
+    {
+      "type": "skip",
+      "layer": 0
+    },
+    {
+      "type": "convolutional",
+      "filters": 16,
+      "kernel": 1
+    },
+    {
+      "type": "convolutional",
+      "filters": 32,
+      "kernel": 5
+    },
+    {
+      "type": "concatenate",
+      "layer": -4
+    },
+    {
+      "type": "skip",
+      "layer": 0
+    },
+    {
+      "type": "pool",
+      "kernel": 3,
+      "stride": 1,
+      "padding": "same"
+    },
+    {
+      "type": "convolutional",
+      "filters": 32,
+      "kernel": 1
+    },
+    {
+      "type": "concatenate",
+      "layer": -4
+    },
+    {
+      "type": "conv_downscale",
+      "filters": 128
+    },
+    {
+      "type": "conv_downscale",
+      "filters": 128
+    },
+    {
+      "type": "conv_depth_downscale"
+    },
+    {
+      "type": "reshape",
+      "output": [-1]
+    },
+    {
+      "type": "linear",
+      "factor": 1
+    }
+  ]
+}

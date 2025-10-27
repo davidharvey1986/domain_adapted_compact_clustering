@@ -1,0 +1,114 @@
+{
+  "net": {
+    "2d": 1,
+    "checkpoints": 1,
+    "convolutional": {
+      "dropout": 0.05
+    }
+  },
+  "layers": [
+    {
+      "type": "composite",
+      "channels": 32,
+      "config_path": "../network_configs/inception.json"
+    },
+    {
+      "type": "pool"
+    },
+    {
+      "type": "composite",
+      "channels": 64,
+      "config_path": "../network_configs/inception.json"
+    },
+    {
+      "type": "pool"
+    },
+    {
+      "type": "composite",
+      "channels": 128,
+      "config_path": "../network_configs/inception.json"
+    },
+    {
+      "type": "pool"
+    },
+    {
+      "type": "composite",
+      "channels": 256,
+      "config_path": "../network_configs/inception.json"
+    },
+    {
+      "type": "pool"
+    },
+    {
+      "type": "composite",
+      "channels": 256,
+      "config_path": "../network_configs/inception.json"
+    },
+    {
+      "type": "reshape",
+      "output": [-1]
+    },
+    {
+      "type": "sample",
+      "features": 1
+    },
+    {
+      "type": "clone",
+      "number": 1
+    },
+    {
+      "type": "linear",
+      "features": 9216
+    },
+    {
+      "type": "reshape",
+      "output": [256, 6, 6]
+    },
+    {
+      "type": "composite",
+      "channels": 256,
+      "config_path": "../network_configs/inception.json"
+    },
+    {
+      "type": "conv_transpose",
+      "filters": 256
+    },
+    {
+      "type": "composite",
+      "channels": 256,
+      "config_path": "../network_configs/inception.json"
+    },
+    {
+      "type": "conv_transpose",
+      "filters": 128,
+      "out_padding": 1
+    },
+    {
+      "type": "composite",
+      "channels": 128,
+      "config_path": "../network_configs/inception.json"
+    },
+    {
+      "type": "conv_transpose",
+      "filters": 64
+    },
+    {
+      "type": "composite",
+      "channels": 64,
+      "config_path": "../network_configs/inception.json"
+    },
+    {
+      "type": "conv_transpose",
+      "filters": 32
+    },
+    {
+      "type": "composite",
+      "channels": 32,
+      "config_path": "../network_configs/inception.json"
+    },
+    {
+      "type": "convolutional",
+      "filters": 2
+    }
+  ]
+}

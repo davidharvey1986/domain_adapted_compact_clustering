@@ -1,0 +1,26 @@
+{
+  "net": {
+    "checkpoints": 1,
+    "Linear": {
+      "dropout": 0.1
+    }
+  },
+  "layers": [
+    {
+      "type": "Pool"
+    },
+    {
+      "type": "Reshape",
+      "shape": [-1]
+    },
+    {
+      "type": "Linear",
+      "features": 64
+    },
+    {
+      "type": "Linear",
+      "factor": 1,
+      "dropout": 0
+    }
+  ]
+}

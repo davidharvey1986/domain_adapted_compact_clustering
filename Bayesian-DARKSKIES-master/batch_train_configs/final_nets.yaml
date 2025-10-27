@@ -1,0 +1,163 @@
+training:
+  # If the simulations should be cumulatively added between tests or only use simulations given
+  # for that test
+  cumulative: True
+  # If the unknown simulations should be cumulatively added between tests or only use simulations
+  # given for that test
+  unknown-cumulative: True
+  # Number of epochs to train the network for
+  epochs: 200
+  # Number of repeats per test
+  repeats: 5
+  # File number to save the network progres
+  batch-save: 50
+  # File number to load the network state
+  batch-load: 49
+  # Learning rate for training the network
+  learning-rate: 1.0e-4
+  # File name for the network model to load
+  network-name: 'network_v8'
+  # Network description to append on description
+  description: 'Final Large Net, Flamingo, (K 1e-2, NX, 1L)'
+  # Names for each test
+  test-names:
+    # Batch Train 41 & 46
+#    - 'BAHAMAS-0.1 unknown'
+#    - 'BAHAMAS-0.3 unknown'
+#    - 'BAHAMAS AGN unknown'
+#    - 'BAHAMAS, FLAMINGO Low Test unknown'
+#    - 'BAHAMAS AGN, FLAMINGO Low Test unknown'
+#    - 'FLAMINGO, FLAMINGO Low Test unknown'
+#    - 'FLAMINGO AGN, FLAMINGO Low Test unknown'
+
+    # Batch Train 42 & 43
+#    - 'BAHAMAS, DMO-0.1 unknown'
+#    - 'BAHAMAS AGN, DMO-0.1 unknown'
+#    - 'BAHAMAS-DMO-0, DMO-0.1 unknown'
+#    - 'BAHAMAS-DMO-1, DMO-0.1 unknown'
+
+    # Batch Train 44, 47, 49, & 50
+    - 'BAHAMAS, DARKSKIES-0.1'
+    - 'BAHAMAS AGN, DARKSKIES-0.1'
+    - 'DARKSKIES-0, DARKSKIES-0.1'
+    - 'DARKSKIES-0.2, DARKSKIES-0.1'
+
+    # Batch Train 45 & 48
+#    - 'BAHAMAS, FLAMINGO Low Test unknown'
+#    - 'BAHAMAS AGN, FLAMINGO Low Test unknown'
+#    - 'FLAMINGO, FLAMINGO Low Test unknown'
+#    - 'FLAMINGO AGN, FLAMINGO Low Test unknown'
+
+    # Batch Train 40 & 46, index 7 & 8
+#    - 'FLAMINGO AGN, FLAMINGO Low Test unknown, with X-Ray'
+#    - 'BAHAMAS AGN, FLAMINGO Low Test unknown, with X-Ray'
+  # Known simulations for each test
+  known-simulations:
+    # Batch Train 41 & 46
+#    -
+#      - 'bahamas_cdm'
+#      - 'bahamas_0.3'
+#      - 'bahamas_1'
+#    -
+#      - 'bahamas_0.1'
+#      - '!bahamas_0.3'
+#    -
+#      - 'bahamas_0.3'
+#    - []
+#    -
+#      - 'bahamas_cdm_low'
+#      - 'bahamas_cdm_hi'
+#    -
+#      - 'flamingo'
+#    -
+#      - 'flamingo_low'
+#      - 'flamingo_hi'
+    # Batch Train 42 & 43
+#    -
+#      - 'bahamas_cdm'
+#      - 'bahamas_0.1'
+#      - 'bahamas_0.3'
+#      - 'bahamas_1'
+#    -
+#      - 'bahamas_cdm_low'
+#      - 'bahamas_cdm_hi'
+#    -
+#      - 'bahamas_dmo_cdm'
+#    -
+#      - 'bahamas_dmo_1'
+    # Batch Train 44, 47, 49, & 50
+    -
+      - 'bahamas_cdm'
+      - 'bahamas_0.1'
+      - 'bahamas_0.3'
+      - 'bahamas_1'
+    -
+      - 'bahamas_cdm_low'
+      - 'bahamas_cdm_hi'
+    -
+      - 'darkskies_cdm'
+    -
+      - 'darkskies_0.2'
+    # Batch Train 45 & 48
+#    -
+#      - 'bahamas_cdm'
+#      - 'bahamas_0.1'
+#      - 'bahamas_0.3'
+#      - 'bahamas_1'
+#    -
+#      - 'bahamas_cdm_low'
+#      - 'bahamas_cdm_hi'
+#    -
+#      - 'flamingo'
+#    -
+#      - 'flamingo_low'
+#      - 'flamingo_hi'
+    # Batch Train 40 & 46, index 7 & 8
+#    -
+#      - '!flamingo'
+#      - '!flamingo_low'
+#      - '!flamingo_hi'
+#      - '!bahamas_cdm_low'
+#      - '!bahamas_cdm_hi'
+  # Unknown simulations, if simulation is also in known-simulations, it will be treated as known
+  unknown-simulations:
+    # Batch Train 41 & 46
+#    -
+#      - 'bahamas_0.1'
+#    -
+#      - '!bahamas_0.1'
+#      - 'bahamas_0.3'
+#    -
+#      - '!bahamas_0.3'
+#      - 'bahamas_cdm_low'
+#      - 'bahamas_cdm_hi'
+#    -
+#      - '!bahamas_cdm_low'
+#      - '!bahamas_cdm_hi'
+#      - 'flamingo_low_test'
+#    - []
+#    - []
+#    - []
+    # Batch Train 42 & 43
+#    -
+#      - 'bahamas_dmo_0.1'
+#    - []
+#    - []
+#    - []
+    # Batch Train 44, 47, 49, & 50
+    -
+      - 'darkskies_0.1'
+    - []
+    - []
+    - []
+    # Batch Train 45 & 48
+#  -
+#    - 'flamingo_low_test'
+#  - []
+#  - []
+#  - []
+    # Batch Train 40 & 46, index 7 & 8
+#    -
+#      - '!flamingo_low_test'
+#      - 'bahamas_cdm_low'
+#      - 'bahamas_cdm_hi'

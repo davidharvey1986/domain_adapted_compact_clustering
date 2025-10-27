@@ -1,0 +1,36 @@
+{
+  "net": {
+    "dropout_prob": 0.3,
+    "2d": 1
+  },
+  "layers": [
+    {
+      "type": "inception"
+    },
+    {
+      "type": "pool",
+      "padding": 0
+    },
+    {
+      "type": "inception"
+    },
+    {
+      "type": "pool",
+      "padding": 0
+    },
+    {
+      "type": "inception"
+    },
+    {
+      "type": "conv_depth_downscale"
+    },
+    {
+      "type": "reshape",
+      "output": [-1]
+    },
+    {
+      "type": "linear",
+      "factor": 1
+    }
+  ]
+}

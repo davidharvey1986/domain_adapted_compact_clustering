@@ -1,0 +1,38 @@
+{
+  "net": {
+    "2d": 1,
+    "checkpoints": 1,
+    "convolutional": {
+      "dropout": 0.0
+    },
+    "description": "Fully convolutional, non-variational"
+  },
+  "layers": [
+    {
+      "type": "composite",
+      "channels": 8,
+      "config_path": "../network_configs/inception.json"
+    },
+    {
+      "type": "pool"
+    },
+    {
+      "type": "composite",
+      "channels": 16,
+      "config_path": "../network_configs/inception.json"
+    },
+    {
+      "type": "conv_transpose",
+      "filters": 8
+    },
+    {
+      "type": "composite",
+      "channels": 8,
+      "config_path": "../network_configs/inception.json"
+    },
+    {
+      "type": "convolutional",
+      "filters": 2
+    }
+  ]
+}

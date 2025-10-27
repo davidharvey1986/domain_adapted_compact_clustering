@@ -1,0 +1,58 @@
+{
+  "net": {
+    "2d": 1,
+    "convolutional": {
+      "dropout": 0.05
+    },
+    "description": "Additional linear layers"
+  },
+  "layers": [
+    {
+      "type": "convolutional",
+      "filters": 16
+    },
+    {
+      "type": "pool"
+    },
+    {
+      "type": "composite",
+      "channels": 128,
+      "config_path": "../network_configs/inception.json"
+    },
+    {
+      "type": "pool"
+    },
+    {
+      "type": "composite",
+      "channels": 256,
+      "config_path": "../network_configs/inception.json"
+    },
+    {
+      "type": "pool"
+    },
+    {
+      "type": "convolutional",
+      "filters": 256
+    },
+    {
+      "type": "pool"
+    },
+    {
+      "type": "convolutional",
+      "filters": 256
+    },
+    {
+      "type": "reshape",
+      "output": [-1]
+    },
+    {
+      "type": "linear",
+      "features": 1024
+    },
+    {
+      "type": "linear",
+      "factor": 1,
+      "dropout": 0
+    }
+  ]
+}

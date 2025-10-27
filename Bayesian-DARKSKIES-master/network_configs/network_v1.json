@@ -1,0 +1,44 @@
+{
+  "net": {
+    "dropout_prob": 0.1,
+    "2d": 1
+  },
+  "layers": [
+    {
+      "type": "conv_downscale",
+      "filters": 16
+    },
+    {
+      "type": "convolutional",
+      "filters": 16
+    },
+    {
+      "type": "conv_downscale",
+      "filters": 16
+    },
+    {
+      "type": "convolutional",
+      "filters": 16
+    },
+    {
+      "type": "conv_downscale",
+      "filters": 16
+    },
+    {
+      "type": "conv_depth_downscale"
+    },
+    {
+      "type": "reshape",
+      "output": [-1]
+    },
+    {
+      "type": "linear",
+      "features": 100,
+      "dropout": 1
+    },
+    {
+      "type": "linear",
+      "factor": 1
+    }
+  ]
+}

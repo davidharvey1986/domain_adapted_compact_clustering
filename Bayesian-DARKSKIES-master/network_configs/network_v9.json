@@ -1,0 +1,71 @@
+{
+  "net": {
+    "checkpoints": 1,
+    "description": "Clustering Reduced",
+    "Composite": {
+      "name": "inception",
+      "config_dir": "../network_configs/composite_layers/"
+    }
+  },
+  "layers": [
+    {
+      "type": "Composite",
+      "channels": 32
+    },
+    {
+      "type": "Pool"
+    },
+    {
+      "type": "Composite",
+      "channels": 64
+    },
+    {
+      "type": "Pool"
+    },
+    {
+      "type": "Composite",
+      "channels": 128
+    },
+    {
+      "type": "Pool"
+    },
+    {
+      "type": "Composite",
+      "channels": 256
+    },
+    {
+      "type": "Pool"
+    },
+    {
+      "type": "Composite",
+      "channels": 256
+    },
+    {
+      "type": "Reshape",
+      "shape": [-1]
+    },
+    {
+      "type": "Checkpoint"
+    },
+    {
+      "type": "Linear",
+      "features": 1024
+    },
+    {
+      "type": "Checkpoint"
+    },
+    {
+      "type": "Linear",
+      "features": 4,
+      "dropout": 0
+    },
+    {
+      "type": "Checkpoint"
+    },
+    {
+      "type": "Linear",
+      "factor": 1,
+      "dropout": 0
+    }
+  ]
+}

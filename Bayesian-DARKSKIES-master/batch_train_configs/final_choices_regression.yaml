@@ -1,0 +1,57 @@
+training:
+  # If the simulations should be cumulatively added between tests or only use simulations given
+  # for that test
+  cumulative: True
+  # If the unknown simulations should be cumulatively added between tests or only use simulations
+  # given for that test
+  unknown-cumulative: True
+  # Number of epochs to train the network for
+  epochs: 150
+  # Number of repeats per test
+  repeats: 10
+  # File number to save the network progres, should be a multiple of 100
+  batch-save: 29
+  # File number to load the network state, should be a multiple of 100
+  batch-load: 0
+  # Learning rate for training the network
+  learning-rate: 1.0e-4
+  # File name for the network model to load
+  network-name: 'network_v10_encoder'
+  # Network description to append on description
+  description: 'Regression, Noise'
+  # Names for each test
+  test-names:
+  # Batch Train 25
+#    - 'Log, NX, 1L, Noise'
+#    - 'Log, NX, 1L, Noise, No FLAMINGO, No AGN'
+  # Batch Train 29
+    - 'Log, NX, 1L, Noise, No FLAMINGO, No AGN'
+  # Known simulations for each test
+  known-simulations:
+#    -
+#      - 'bahamas_cdm'
+#      - 'bahamas_cdm_low'
+#      - 'bahamas_cdm_hi'
+#      - 'bahamas_0.1'
+#      - 'bahamas_0.3'
+#      - 'bahamas_1'
+#      - 'flamingo'
+#      - 'flamingo_low'
+#      - 'flamingo_hi'
+#    -
+#      - '!bahamas_cdm_low'
+#      - '!bahamas_cdm_hi'
+#      - '!flamingo'
+#      - '!flamingo_low'
+#      - '!flamingo_hi'
+
+    -
+      - 'bahamas_cdm'
+      - 'bahamas_0.1'
+      - 'bahamas_0.3'
+      - 'bahamas_1'
+  # Unknown simulations, if simulation is also in known-simulations, it will be treated as known
+  unknown-simulations:
+#    - []
+
+    - []

@@ -1,0 +1,154 @@
+training:
+  # If the simulations should be cumulatively added between tests or only use simulations given
+  # for that test
+  cumulative: False
+  # If the unknown simulations should be cumulatively added between tests or only use simulations
+  # given for that test
+  unknown-cumulative: False
+  # Number of epochs to train the network for
+  epochs: 200
+  # Number of repeats per test
+  repeats: 3
+  # File number to save the network progres, should be a multiple of 100
+  batch-save: 10
+  # File number to load the network state, should be a multiple of 100
+  batch-load: 10
+  # Learning rate for training the network
+  learning-rate: 1.0e-4
+  # File name for the network model to load
+  network-name: 'network_v8'
+  # Network description to append on description
+  description: ''
+  # Names for each test
+  test-names:
+    - 'BAHAMAS-0.1 unknown'
+    - 'BAHAMAS-0.3 unknown'
+    - 'BAHAMAS AGN unknown'
+    - 'BAHAMAS AGN, FLAMINGO Low Test unknown'
+    - 'FLAMINGO, FLAMINGO Low Test unknown'
+    - 'FLAMINGO AGN, FLAMINGO Low Test unknown'
+    - 'FLAMINGO AGN, FLAMINGO Low Test & Noise unknown'
+    - 'FLAMINGO, DMO & Noise unknown'
+    - 'FLAMINGO, DMO unknown'
+    - 'BAHAMAS, FLAMINGO Low Test unknown'
+    - 'BAHAMAS, FLAMINGO Low Test unknown, Maximum'
+#      - 'FLAMINGO High, FLAMINGO Low Test unknown'
+  # Known simulations for each test
+  known-simulations:
+    -
+      - 'bahamas_cdm'
+      - 'bahamas_0.3'
+      - 'bahamas_1'
+    -
+      - 'bahamas_cdm'
+      - 'bahamas_0.1'
+      - 'bahamas_1'
+    -
+      - 'bahamas_cdm'
+      - 'bahamas_0.1'
+      - 'bahamas_0.3'
+      - 'bahamas_1'
+    -
+      - 'bahamas_cdm'
+      - 'bahamas_cdm_low'
+      - 'bahamas_cdm_hi'
+      - 'bahamas_0.1'
+      - 'bahamas_0.3'
+      - 'bahamas_1'
+    -
+      - 'flamingo'
+      - 'bahamas_cdm'
+      - 'bahamas_cdm_low'
+      - 'bahamas_cdm_hi'
+      - 'bahamas_0.1'
+      - 'bahamas_0.3'
+      - 'bahamas_1'
+    -
+      - 'flamingo'
+      - 'flamingo_low'
+      - 'flamingo_hi'
+      - 'bahamas_cdm'
+      - 'bahamas_cdm_low'
+      - 'bahamas_cdm_hi'
+      - 'bahamas_0.1'
+      - 'bahamas_0.3'
+      - 'bahamas_1'
+    -
+      - 'flamingo'
+      - 'flamingo_low'
+      - 'flamingo_hi'
+      - 'bahamas_cdm'
+      - 'bahamas_cdm_low'
+      - 'bahamas_cdm_hi'
+      - 'bahamas_0.1'
+      - 'bahamas_0.3'
+      - 'bahamas_1'
+    -
+      - 'flamingo'
+      - 'bahamas_cdm'
+      - 'bahamas_0.1'
+      - 'bahamas_0.3'
+      - 'bahamas_1'
+    -
+      - 'flamingo'
+      - 'bahamas_cdm'
+      - 'bahamas_0.1'
+      - 'bahamas_0.3'
+      - 'bahamas_1'
+    -
+      - 'bahamas_cdm'
+      - 'bahamas_0.1'
+      - 'bahamas_0.3'
+      - 'bahamas_1'
+    -
+      - 'flamingo'
+      - 'flamingo_low'
+      - 'flamingo_hi'
+      - 'bahamas_cdm'
+      - 'bahamas_cdm_low'
+      - 'bahamas_cdm_hi'
+      - 'bahamas_0.1'
+      - 'bahamas_0.3'
+      - 'bahamas_1'
+#      -
+#        - 'flamingo'
+#        - 'flamingo_hi'
+#        - 'bahamas_cdm'
+#        - 'bahamas_0.1'
+#        - 'bahamas_0.3'
+#        - 'bahamas_1'
+  # Unknown simulations, if simulation is also in known-simulations, it will be treated as known
+  unknown-simulations:
+    -
+      - 'bahamas_0.1'
+    -
+      - 'bahamas_0.3'
+    -
+      - 'bahamas_cdm_low'
+      - 'bahamas_cdm_hi'
+    -
+      - 'flamingo_low_test'
+    -
+      - 'flamingo_low_test'
+    -
+      - 'flamingo_low_test'
+    -
+      - 'flamingo_low_test'
+      - 'noise'
+    -
+      - 'bahamas_dmo_cdm'
+      - 'bahamas_dmo_0.1'
+      - 'bahamas_dmo_1'
+      - 'flamingo_low_test'
+      - 'Noise'
+    -
+      - 'bahamas_dmo_cdm'
+      - 'bahamas_dmo_0.1'
+      - 'bahamas_dmo_1'
+      - 'flamingo_low_test'
+    -
+      - 'flamingo_low_test'
+    -
+      - 'flamingo_low_test'
+#      -
+#        - 'flamingo_low_test'
